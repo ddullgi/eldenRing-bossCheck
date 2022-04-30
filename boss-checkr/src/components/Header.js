@@ -4,7 +4,7 @@ function Header(props) {
   return (
     <header>
       <h1>
-        {props.title} {props.clearBossN}/{props.maxN}
+        {props.title} {props.clearBossN}/{props.maxN - 1}
       </h1>
     </header>
   );

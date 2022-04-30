@@ -16,9 +16,9 @@ const area = [
 function Nav(props) {
   const lis = [[], [], [], [], [], [], [], [], []];
 
-  if (props.topics.length !== 0) {
-    for (let i = 0; i < props.topics.length; i++) {
-      let t = props.topics[i];
+  if (props.data.length !== 0) {
+    for (let i = 0; i < props.data.length; i++) {
+      let t = props.data[i];
       for (let j = 0; j < area.length; j++) {
         if (t.body === area[j]) {
           lis[j].push(

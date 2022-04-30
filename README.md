@@ -1,102 +1,23 @@
-# -
-엘든링 보스 체크 사이트 토이프로젝트
+#### 1. 프로젝트 설명
+
+- 부트스트랩을 이용하여  모달, 카드, 아코디언을 만들었다.
+
+- 새로운 보스 목록 생성시 form에서 보스이름, 등장지역(select), 필수보스 여부(check)를 입력 할 수 있게 만들 었고,  필수 보스일 경우 보스의 이름이 노란색으로 표시되게 만들었다.
+
+- 해당 보스의 카드 클릭시 `onclick`을 받아 클리어 여부를 카드의 색상으로 표시해주고 로컬 스토리지에 클리어 정보를 저장한다.
+
+- 로컬 스토리지를 이용하여 보스이름, 등장지역, 필수보스 여부, 클리어 여부를 json의 형태로 저장하였고, 페이지를 새로고침해도 정보를 똑같이 표시할 수 있도록 만들었다.(클리어 정보 유지에 공를 들임)
+
+  ![image-20220430183128867](https://raw.githubusercontent.com/shrewslampe/image_sever/master/img/image-20220430183128867.png)
 
 
 
+- 프로젝트 동작 
 
-# 기획
-
-
-# 엘든링 보스 체커 사이트
-
-![image-20220422013902241](https://raw.githubusercontent.com/shrewslampe/image_sever/master/img/image-20220422013902241.png)
+![bandicam 2022-04-30 18-18-36-333](https://raw.githubusercontent.com/shrewslampe/image_sever/master/img/bandicam%202022-04-30%2018-18-36-333.gif)
 
 
 
+#### 2. 2주차 목표
 
-
-# 필요 기술 스택
-
-### 언어
-
-- python
-- html
-- CSS
-- Javascript
-- SQL
-
-
-
-### 프레임 워크
-
-- django
-- react
-- sqlite3
-
-
-
-
-
-# 필요 기능
-
-### 필수
-
-- 보스별 클리어 여부 체크
-
-  - 마우스 클릭으로 on off 변경
-
-    ![image-20220422032013625](https://raw.githubusercontent.com/shrewslampe/image_sever/master/img/image-20220422032013625.png) 
-
-    ![image-20220422032031751](https://raw.githubusercontent.com/shrewslampe/image_sever/master/img/image-20220422032031751.png) 
-
-- 같은 보스가 여러마리 존재하는 경우 별도 체크 기능
-
-  ![image-20220422031619538](https://raw.githubusercontent.com/shrewslampe/image_sever/master/img/image-20220422031619538.png) 
-
-  - 이 경우 마우스 클릭이 보스 클리어 정보 기록 X
-
-  - 팝업 페이지를 열어 개별 체크 
-
-    ![image-20220422032357070](https://raw.githubusercontent.com/shrewslampe/image_sever/master/img/image-20220422032357070.png) 
-
-- 보스의 종류별, 위치별 정렬 변경 기능
-
-  - SQL이나 ORM으로 정렬
-
-- 다수의 유저가 이용 할수 있도록 login 구현
-
-  - N:M 구현
-
-- 보스별 위치, 보상 등의 정보 표시
-
-  - 별도의 detail 페이지 없이 마우스 오버로 구현
-
-    ![image-20220422031852972](https://raw.githubusercontent.com/shrewslampe/image_sever/master/img/image-20220422031852972.png) 
-
-- 기록한 데이터가 휘발성이면 안되므로 DB에 저장
-
-  - REST API 활용
-
-- 완성도 있는 디자인으로 구현(어렵다 ㅠㅠ)
-
-
-
-### 여유가 된다면 넣고 싶은 것
-
-- 보스 뿐만 아니라 무기, 뼛가루, 마술/기도 등 다른 아이템의 루팅 여부 체크
-
-- 위 기능 구현후 위치를 맵 페이지를 만들어서 표시(아마 현재는 힘들듯)
-
-  - 색인 기능
-
-    ![image-20220422031731716](https://raw.githubusercontent.com/shrewslampe/image_sever/master/img/image-20220422031731716.png) 
-
-  - 루팅/ 클리어 여부 지도상에 표시
-
-    ![image-20220422032530853](https://raw.githubusercontent.com/shrewslampe/image_sever/master/img/image-20220422032530853.png) 
-
-
-
-
-
-![img](https://cdn.discordapp.com/attachments/939084865557643329/967021441948217364/unknown.png)
+- 기능 구현은 거의 완성 했기 때문에, css와 라이브러리등을 활용하여 디자인과 이펙트를 손 보는것이 목표이다.

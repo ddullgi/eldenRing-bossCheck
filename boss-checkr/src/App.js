@@ -3,22 +3,8 @@ import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Create from "./components/Create";
 import { useState } from "react";
-
-const BOSS_KEY = "boss";
-localStorage.setItem(
-  BOSS_KEY,
-  JSON.stringify([
-    {
-      id: 1,
-      title: "트리가드",
-      body: "림그레이브",
-      requierd: false,
-      clearInfo: false,
-    },
-    // {id: 2, title:'접목의 고드릭', body:'림그레이브', requierd: true, clearInfo:false},
-    // {id: 3, title:'흉조의 멀기트', body:'림그레이브', requierd: true, clearInfo:false},
-  ])
-);
+import { useEffect } from "react";
+const BOSS_KEY = "data";
 
 function App() {
   // const _mode = useState('WELCOME')
@@ -26,20 +12,24 @@ function App() {
   // const setMode = _mode[1]
   // const [mode, setMode] = useState('WELCOME')
   // const [id, setId] = useState(null)
-  const savedData = JSON.parse(localStorage.getItem(BOSS_KEY));
-  const [nextId, setNextId] = useState(savedData.length + 1);
-  const [topics, setTopics] = useState(savedData);
 
+  const [data, setTopics] = useState(
+    () => JSON.parse(localStorage.getItem("data")) || [{}]
+  );
+  useEffect(() => {
+    localStorage.setItem("data", JSON.stringify(data));
+  }, [data]);
+  const [nextId, setNextId] = useState(data.length + 1);
   function saveBoss() {
-    localStorage.setItem(BOSS_KEY, JSON.stringify(topics));
+    localStorage.setItem(BOSS_KEY, JSON.stringify(data));
   }
 
   saveBoss();
 
-  const maxN = topics.length;
+  const maxN = data.length;
   let clearBossN = 0;
-  for (let i = 0; i < topics.length; i++) {
-    if (topics[i].clearInfo === true) {
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].clearInfo === true) {
       clearBossN += 1;
     }
   }
@@ -48,9 +38,9 @@ function App() {
     <div>
       <Header title="Elden ring" maxN={maxN} clearBossN={clearBossN} />
       <Nav
-        topics={topics}
+        data={data}
         onClear={(index, clearInfo) => {
-          const newInfo = [...topics];
+          const newInfo = [...data];
           newInfo[index].clearInfo = clearInfo;
           setTopics(newInfo);
           saveBoss();
@@ -66,7 +56,7 @@ function App() {
             requierd: _check,
             clearInfo: false,
           };
-          const newTopics = [...topics];
+          const newTopics = [...data];
 
           newTopics.push(newTopic);
           setTopics(newTopics);
