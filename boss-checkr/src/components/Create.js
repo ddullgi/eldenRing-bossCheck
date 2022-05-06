@@ -1,9 +1,9 @@
 function Create(props) {
   return (
-    <div style={{ position: "absolute", right: "20px", bottom: "20px" }}>
+    <div>
       <button
         type="button"
-        className="btn btn-primary"
+        className="btn btn-primary fixed-bottom"
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
         data-bs-whatever="@mdo"
@@ -86,7 +86,7 @@ function Create(props) {
                 className="btn btn-secondary"
                 data-bs-dismiss="modal"
               >
-                Close
+                닫기
               </button>
               <button
                 type="button"
@@ -102,7 +102,7 @@ function Create(props) {
                   document.getElementById("myform").reset();
                 }}
               >
-                Send message
+                생성
               </button>
             </div>
           </div>

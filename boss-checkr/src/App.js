@@ -7,19 +7,13 @@ import { useEffect } from "react";
 const BOSS_KEY = "data";
 
 function App() {
-  // const _mode = useState('WELCOME')
-  // const mode = _mode[0]
-  // const setMode = _mode[1]
-  // const [mode, setMode] = useState('WELCOME')
-  // const [id, setId] = useState(null)
-
   const [data, setTopics] = useState(
-    () => JSON.parse(localStorage.getItem("data")) || [{}]
+    () => JSON.parse(localStorage.getItem("data")) || []
   );
   useEffect(() => {
     localStorage.setItem("data", JSON.stringify(data));
   }, [data]);
-  const [nextId, setNextId] = useState(data.length + 1);
+  const [nextId, setNextId] = useState(data.length);
   function saveBoss() {
     localStorage.setItem(BOSS_KEY, JSON.stringify(data));
   }
